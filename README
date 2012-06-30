@@ -1,0 +1,49 @@
+In China, sometimes we can't access the global servers of Flickr.
+I think you know the reason. ^_^
+
+We are lucky, Flickr has other sets of server, such as East, West.
+As I tested, East hosts are available always.
+You can use "http://www.flickr.com/help/test" to test.
+But we can't ask our PC/laptop to access these servers directly.
+
+We have to cheat our machine by changing /etc/hosts (In windows: C:\WINDOWS\system32\drivers\etc).
+In hosts file, we can create mapping between ip address and host name.
+So we use the ip address of East servers and Global host names.
+
+This script is used to generate such mapping text.
+
+Requirement
+==============
+Make sure you have Python 2.7 in your OS.
+
+Run
+==============
+Quite easy!
+Just type: python flickr_serverip_getter.py
+And after several seconds, you can get the mapping text, like:
+
+          |	Global Host                   |	East Host                     |	East IP
+------------------------------------------------------------------------------------------------
+Farm 1    |	farm1.staticflickr.com        |	bf1.farm1.staticflickr.com    |	98.139.18.218
+Farm 2    |	farm2.staticflickr.com        |	bf1.farm2.staticflickr.com    |	98.139.18.219
+Farm 3    |	farm3.staticflickr.com        |	ac4.farm3.staticflickr.com    |	76.13.18.78
+Farm 4    |	farm4.staticflickr.com        |	ac4.farm4.staticflickr.com    |	76.13.18.77
+Farm 5    |	farm5.staticflickr.com        |	ac4.farm5.staticflickr.com    |	76.13.18.79
+Farm 6    |	farm6.staticflickr.com        |	bf1.farm6.staticflickr.com    |	98.139.197.254
+Farm 7    |	farm7.staticflickr.com        |	bf1.farm7.staticflickr.com    |	98.139.102.46
+Farm 8    |	farm8.staticflickr.com        |	bf1.farm8.staticflickr.com    |	98.137.200.139
+Farm 9    |	farm9.staticflickr.com        |	bf1.farm9.staticflickr.com    |	98.137.205.126
+
+Copy following ip table to /etc/hosts (For Windows OS: C:\WINDOWS\system32\drivers\etc).
+
+98.139.18.218 farm1.staticflickr.com
+98.139.18.219 farm2.staticflickr.com
+76.13.18.78 farm3.staticflickr.com
+76.13.18.77 farm4.staticflickr.com
+76.13.18.79 farm5.staticflickr.com
+98.139.197.254 farm6.staticflickr.com
+98.139.102.46 farm7.staticflickr.com
+98.137.200.139 farm8.staticflickr.com
+98.137.205.126 farm9.staticflickr.com
+
+Please enjoy it!
