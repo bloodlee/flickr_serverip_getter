@@ -12,7 +12,7 @@ import argparse
 import urllib2
 import re
 import socket
-from BeautifulSoup import BeautifulSoup
+from bs4 import BeautifulSoup
 
 FLICKR_TEST_PAGE_URL = "http://www.flickr.com/help/test"
 FARM_NAME_COL_INDEX = 0
