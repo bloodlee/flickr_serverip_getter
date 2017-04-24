@@ -39,7 +39,7 @@ class AddressInfo:
         return self.east_host
 
 def getServerName(status_icon_url):
-    m = re.search("https://([^/]+)/", status_icon_url)
+    m = re.search("http[s]{0,1}://([^/]+)/", status_icon_url)
     return m.group(1)
 
 if __name__ == '__main__':
