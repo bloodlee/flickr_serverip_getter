@@ -39,7 +39,7 @@ class AddressInfo:
         return self.east_host
 
 def getServerName(status_icon_url):
-    m = re.search("http://([^/]+)/", status_icon_url)
+    m = re.search("https://([^/]+)/", status_icon_url)
     return m.group(1)
 
 if __name__ == '__main__':
@@ -55,7 +55,7 @@ if __name__ == '__main__':
     html = response.read()
 
     # pass html to html parser
-    soup = BeautifulSoup(html)
+    soup = BeautifulSoup(html, "html.parser")
 
     trs = soup.find('div', id='Main').table.findAll('tr')
 
